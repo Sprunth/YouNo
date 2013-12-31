@@ -19,12 +19,7 @@ namespace YouNo
             {
                 case YouNo.ActionType.DrawTwo:
                     {
-                        Card card1 = YouNoGame.ActiveGame.CardDeck.DrawCard();
-                        Card card2 = YouNoGame.ActiveGame.CardDeck.DrawCard();
-
-                        currentPlayer.AddCard(card1);
-                        currentPlayer.AddCard(card2);
-
+                        // Handled by PlayerManager
                         break;
                     }
 

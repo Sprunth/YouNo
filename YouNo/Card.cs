@@ -6,7 +6,7 @@
     {
         public virtual void PlayCard(Player currentPlayer)
         {
-            YouNoGame.ActiveGame.CardDeck.LastPlayedCard = this;
+            //YouNoGame.ActiveGame.CardDeck.LastPlayedCard = this;
             YouNoGame.ActiveGame.CardDeck.DiscardCard(this);
         }
 

@@ -75,6 +75,22 @@
                 return false;
             }
         }
+        public bool LastCardWasDrawTwo
+        {
+            get
+            {
+                if (LastPlayedCard is ActionCard)
+                {
+                    ActionCard c = (ActionCard)LastPlayedCard;
+
+                    if (c.ActionType == ActionType.DrawTwo)
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            }
+        }
         public bool LastCardWasWild
         {
             get
@@ -123,6 +139,7 @@
 
         public void DiscardCard(Card card)
         {
+            LastPlayedCard = card;
             discard.Enqueue(card);
         }
 
@@ -138,6 +155,11 @@
             Console.WriteLine();
         }
 
+        /// <summary>
+        /// Determines whether or not a card can be played
+        /// </summary>
+        /// <param name="playedCard">The card trying to be played</param>
+        /// <returns>True if card can be played, false if otherwise</returns>
         public bool ValidatePlay(Card playedCard)
         {
             // wild is always allowed

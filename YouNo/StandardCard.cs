@@ -1,7 +1,6 @@
-﻿
-namespace YouNo
+﻿namespace YouNo
 {
-    class StandardCard : ColorCard
+    internal class StandardCard : ColorCard
     {
         public StandardCard(CardColor color, int value)
         {

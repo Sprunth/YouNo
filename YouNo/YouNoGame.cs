@@ -18,7 +18,7 @@ namespace YouNo
             // create 1 human and 3 CPUs
             PlayerManager = new PlayerManager();
             PlayerManager.CreatePlayer(true, "Human1");
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 2; i++)
                 PlayerManager.CreatePlayer(false, "CPU" + ((int)i + 1));
             PlayerManager.DealCards();
 
@@ -27,15 +27,14 @@ namespace YouNo
             CardDeck.DiscardCard(firstCard);
 
             PlayerManager.DebugPrintAllCardsInHands();
-            Console.WriteLine();
-           
-            
+            Console.WriteLine();           
         }
 
         public static YouNoGame ActiveGame { get; set; }
         public Deck CardDeck { get; set; }
         public PlayerManager PlayerManager { get; set; }
         public bool Win { get; set; }
+        public Player winningPlayer { get; set; }
 
         public void Run()
         {
